@@ -15,14 +15,14 @@ namespace :import_csv do
           address: row["address"]
       }
     end
-    puts "インポート処理を開始".red
+    puts "インポート処理を開始"
     begin
       User.transaction do
       User.create!(list)
     end
-      puts "インポート完了!!".green
+      puts "インポート完了!!"
     rescue ActiveModel::UnknownAttributeError => invalid
-      puts "インポートに失敗：UnknownAttributeError".red
+      puts "インポートに失敗：UnknownAttributeError"
     end
   end
 end
